@@ -4,13 +4,12 @@
   "description": "",
   "main": "karma.conf.js",
   "scripts": {
-    "start-dev": "webpack serve --config webpack.dev.js",
+    "start-dev": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js && node sharp.js",
-    "serve": "http-server dist --port 5000",
-    "build-serve": "npm run build && npm run serve",
+    "build-image": "node sharp.js",
     "test": "karma start",
-    "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js"
+    "lint": "eslint ./src",
+    "e2e": "codeceptjs run --steps"
   },
   "author": "yoga",
   "license": "ISC",
